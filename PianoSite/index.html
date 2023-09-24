@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/piano.png">
+  </head>
+<body style="background-color:rgb(0, 0, 0);">
+    <div>
+      <nav class="navbar bg-black">
+        <div class="container-fluid">
+          <div class="col">
+            <div class="row">
+              <p class="pianoText mx-auto col-auto">
+                Virtual Piano
+              </p>
+            </div>
+            <div class="row justify-content-evenly">
+              <div class="form-check col col-auto">
+                <input class="form-check-input" style="height: 32px; width: 32px;" type="checkbox" value="" onclick="checkKeys()" id="keyCheck" checked>
+                <label class="form-check-label checkBox col-auto ms-3" for="flexCheckChecked">
+                  <p>Show keyboard keys</p>
+                </label>
+              </div>
+              <div class="form-check col col-auto">
+                <input class="form-check-input" style="height: 32px; width: 32px;" type="checkbox" value="" onclick="checkNotes()" id="notesCheck" checked>
+                <label class="form-check-label checkBox col-auto ms-3" for="flexCheckChecked">
+                  <p>Show notes</p>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section id="piano">
+        <div class="d-flex">
+          <!-- ---------------------------- first 12 key ----------------------------- -->
+          <div class="mt-5 ms-auto piano" id="part1">
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="C" id="C1"> 
+              <p class="whiteKeyboardKey position-absolute">Tab</p>
+              <p class="whiteKeyNote position-absolute">C</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-3" data-note="C#" id="Cb1"> 
+                <p class="blackKeyboardKey">1</p>
+                <p class="blackKeyNote">C#</p></div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="D" id="D1"> 
+              <p class="whiteKeyboardKey position-absolute">Q</p>
+              <p class="whiteKeyNote position-absolute text-center">D</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-4" data-note="D#" id="Db1"> 
+                <p class="blackKeyboardKey">2</p>
+                <p class="blackKeyNote">D#</p></div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="E" id="E1"> 
+              <p style="margin-top: 91px; margin-left: 28px; position: absolute; font-size: 20px; font-weight: bold;">W</p>
+              <p style="margin-top: 125px; margin-left:30px; font-size: 20px; font-weight: bold; position: absolute;" id="sButtons" >E</p></button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="F" id="F1"> 
+              <p class="whiteKeyboardKey position-absolute">E</p>
+              <p class="whiteKeyNote position-absolute">F</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-3" data-note="F#" id="Fb1"> 
+                <p class="blackKeyboardKey">4</p>
+                <p class="blackKeyNote">F#</p></div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="G" id="G1"> 
+              <p class="whiteKeyboardKey position-absolute">R</p>
+              <p class="whiteKeyNote position-absolute">G</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-4" data-note="G#" id="Gb1"> 
+                <p class="blackKeyboardKey">5</p>
+                <p class="blackKeyNote">G#</p></div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="A" id="A1"> 
+              <p class="whiteKeyboardKey position-absolute">T</p>
+              <p class="whiteKeyNote position-absolute">A</p>
+              <div type="button" class="btn black-key position-relative start-50" style="margin-left: 32px;" data-note="A#" id="Ab1"> 
+                <p class="blackKeyboardKey">6</p>
+                <p class="blackKeyNote">A#</p></div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="B" id="B1"> 
+              <p style="margin-top: 91px; margin-left: 30px; position: absolute; font-size: 20px; font-weight: bold;">Y</p>
+              <p style="margin-top: 127px; margin-left:30px; font-size: 20px; font-weight: bold; position: absolute;" id="sButtons">B</p></button>
+          </div>
+          <!-- ---------------------------- second 12 key ---------------------------- -->
+          <div class="mt-5 me-auto" id="part2">
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="C" id="C2"> 
+              <p class="whiteKeyboardKey position-absolute">U</p>
+              <p class="whiteKeyNote position-absolute">C</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-3" data-note="C#" id="Cb2"> 
+                <p class="blackKeyboardKey">8</p>
+                <p class="blackKeyNote">C#</p> </div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="D" id="D2"> 
+              <p class="whiteKeyboardKey position-absolute">I</p>
+              <p class="whiteKeyNote position-absolute">D</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-4" data-note="D#" id="Db2"> 
+                <p class="blackKeyboardKey">9</p>
+                <p class="blackKeyNote">D#</p> </div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="E" id="E2"> 
+              <p style="margin-top: 91px; margin-left: 28px; position: absolute; font-size: 20px; font-weight: bold;">O</p>
+              <p style="margin-top: 125px; margin-left:30px; font-size: 20px; font-weight: bold; position: absolute;" id="sButtons" >E</p></button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="F" id="F2"> 
+              <p class="whiteKeyboardKey position-absolute">Z</p>
+              <p class="whiteKeyNote position-absolute">F</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-3" data-note="F#" id="Fb2"> 
+                <p class="blackKeyboardKey">S</p>
+                <p class="blackKeyNote">F#</p> </div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="G" id="G2"> 
+              <p class="whiteKeyboardKey position-absolute">X</p>
+              <p class="whiteKeyNote position-absolute">G</p>
+              <div type="button" class="btn black-key position-relative start-50 ms-4" data-note="G#" id="Gb2"> 
+                <p class="blackKeyboardKey">D</p>
+                <p class="blackKeyNote">G#</p> </div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="A" id="A2"> 
+              <p class="whiteKeyboardKey position-absolute">C</p>
+              <p class="whiteKeyNote position-absolute">A</p>
+              <div type="button" class="btn black-key position-relative start-50" style="margin-left: 32px;" data-note="A#" id="Ab2">  
+                <p class="blackKeyboardKey">F</p>
+                <p class="blackKeyNote">A#</p> </div>
+            </button>
+            <button type="button" class="btn white-key rounded-3 border-black" data-note="B" id="B2"> 
+             <p style="margin-top: 91px; margin-left: 30px; position: absolute; font-size: 20px; font-weight: bold;">V</p>
+              <p style="margin-top: 127px; margin-left:30px; font-size: 20px; font-weight: bold; position: absolute;" id="sButtons">B</p></button>
+          </div>
+        </div>
+    </section>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
